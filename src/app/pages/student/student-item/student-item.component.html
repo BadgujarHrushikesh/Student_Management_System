@@ -1,0 +1,16 @@
+<div class="card" style="width: 18rem;" (click)="goTo(student.id)">
+    <!-- <img src="../../../../assets/images/avatar/student1.jpg" class="card-img-top" alt="..."> -->
+    <img [src]="student.img" class="card-img-top" alt="..."  >
+    <div class="card-body">
+      <h5 class="card-title">{{student.name}}</h5>
+      <p class="card-text">Age : {{student.age}}</p>
+      <p class="card-text">Email : {{student.email}}</p>
+      <p class="card-text">Number : {{student.number}}</p>
+     <button class="btn btn-danger me-2">Delete</button>
+     <button class="btn btn-primary" (click)="editStudent($event,student.id)">Edit</button>
+    </div>
+  </div>
+
+
+
+ 

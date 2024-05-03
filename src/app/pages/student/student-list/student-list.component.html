@@ -1,0 +1,11 @@
+<div class="d-flex">
+    <h2>Student list</h2>
+    <button class="btn btn-primary m-2" (click)="goTo()">New Student</button>
+
+</div>
+<div class="row">
+    <div class="col-3 mb-3" *ngFor="let std of students">
+        <app-student-item [student]="std"></app-student-item>
+
+    </div>
+</div>
