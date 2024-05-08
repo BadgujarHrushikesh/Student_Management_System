@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { StudentModel } from './model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 const STUDENTS: StudentModel[] = [
   {
@@ -48,22 +50,34 @@ const STUDENTS: StudentModel[] = [
   providedIn: 'root'
 })
 export class StudentService {
+  public baseUrl = 'http://localhost:5000/api/';
   private students: StudentModel[] = STUDENTS;
 
 
-  constructor() { }
 
-  getStudentList(): StudentModel[] {
-    return this.students
+  constructor(private httpClient: HttpClient) { }
+
+  getStudentList(): Observable<any> {
+    // return this.students
+    return this.httpClient.get(this.baseUrl + 'students')
   }
 
-  getStudentDetails(id: string) :StudentModel | undefined {
-  return this.students.find((std:StudentModel)=>std.id === id);
+  getStudentDetails(id: string): Observable<any> {
+    // return this.students.find((std: StudentModel) => std.id === id);
+    return this.httpClient.get(this.baseUrl + 'students/' + id)
   }
 
-  createStudent(std:StudentModel){
-    this.students.unshift(std);
+  deleteStudent(id: string): Observable<any> {
+    return this.httpClient.delete(this.baseUrl + 'students/' + id);
   }
 
+  createStudent(std: StudentModel): Observable<any> {
+    // this.students.unshift(std);
+    return this.httpClient.post(this.baseUrl + 'students/', std)
+  }
+
+  editStudent(id: string, std: StudentModel): Observable<any> {
+    return this.httpClient.patch(this.baseUrl + 'students/' + id, std)
+  }
 
 }

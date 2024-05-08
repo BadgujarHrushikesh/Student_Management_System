@@ -16,6 +16,10 @@ export const routes: Routes = [{
     path: 'create-student',
     component: CreateStudentComponent
 }, {
+    title: 'Edit Student',
+    path: 'edit-student/:stdId',
+    component: CreateStudentComponent
+}, {
     path: '**',
     redirectTo: 'student-list'
 }];

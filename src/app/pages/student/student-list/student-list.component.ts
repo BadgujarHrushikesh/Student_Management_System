@@ -17,11 +17,22 @@ export class StudentListComponent implements OnInit {
   constructor(private studentService: StudentService, private router: Router) { }
 
   ngOnInit(): void {
-    this.students = this.studentService.getStudentList();
+    this.studentService.getStudentList().subscribe((res) => {
+      this.students = res;
+      console.log(this.students);
+    });
     console.log(this.students)
   }
 
   goTo() {
     this.router.navigate(['create-student']);
+  }
+
+  onDelete(id:string){
+    console.log(id);
+    this.studentService.deleteStudent(id).subscribe((res)=>{
+      this.students = res
+    })
+    
   }
 }

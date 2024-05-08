@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { StudentService } from '../student.service';
 import { StudentModel } from '../model';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-student-details',
@@ -20,11 +21,18 @@ export class StudentDetailsComponent {
   constructor(private studentService: StudentService, public router: Router) { }
 
   initStudent(id: string) {
-    this.student = this.studentService.getStudentDetails(id);
-    if(!this.student){
-      this.goTo();
-    }
-    // console.log(this.student)
+    //   this.student = this.studentService.getStudentDetails(id);
+    //   if(!this.student){
+    //     this.goTo();
+    //   }
+    //   // console.log(this.student)
+
+    this.studentService.getStudentDetails(id).subscribe((res) => {
+      this.student = res;
+      if(!this.student){
+        this.goTo()
+      }
+    })
   }
 
   goTo() {

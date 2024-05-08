@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { StudentModel } from '../model';
 import { Router } from '@angular/router';
 
@@ -11,21 +11,28 @@ import { Router } from '@angular/router';
 })
 export class StudentItemComponent implements OnInit {
   @Input() student!: StudentModel;
- 
-  constructor(private router : Router){}
+  @Output() onDelete = new EventEmitter()
+
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-  
+
   }
 
-  goTo(id:string){
-    this.router.navigate(['student-details',id]);
+  goTo(path: string, id: string) {
+    this.router.navigate([path, id]);
   }
 
-  editStudent(event:any,id :string){
+  editStudent(event: any, id: string) {
     event.stopPropagation();
     console.log(id);
-    
+    this.goTo('edit-student', id)
 
+  }
+
+  deleteStudent(event: any, id: string) {
+    event.stopPropagation();
+    this.onDelete.emit(id)
   }
 }
