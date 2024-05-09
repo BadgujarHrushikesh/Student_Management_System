@@ -21,7 +21,7 @@ export class StudentItemComponent implements OnInit {
   }
 
   goTo(path: string, id: string) {
-    this.router.navigate([path, id]);
+    this.router.navigate(['app', path, id]);
   }
 
   editStudent(event: any, id: string) {

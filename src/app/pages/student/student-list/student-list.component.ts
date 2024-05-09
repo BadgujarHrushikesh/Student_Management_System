@@ -25,7 +25,7 @@ export class StudentListComponent implements OnInit {
   }
 
   goTo() {
-    this.router.navigate(['create-student']);
+    this.router.navigate(['app','create-student']);
   }
 
   onDelete(id:string){

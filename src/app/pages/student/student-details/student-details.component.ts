@@ -36,6 +36,6 @@ export class StudentDetailsComponent {
   }
 
   goTo() {
-    this.router.navigate(['student-list']);
+    this.router.navigate(['app','student-list']);
   }
 }

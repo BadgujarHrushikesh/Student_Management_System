@@ -1,0 +1,23 @@
+// .auth-container {
+//     position: relative;
+//     min-height: 100vh;
+//     background-image: url('https://images.pexels.com/photos/1619569/pexels-photo-1619569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+//     background-size: cover;
+//     background-position: center;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+
+
+.auth-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    // background-color: #ffe26d; /* Set your desired background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
+}
