@@ -1,28 +1,98 @@
-# Student Management System
+# Student Management System using Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The Student Management System is a web application designed to manage various tasks related to student information. This system allows for performing CRUD (Create, Read, Update, Delete) operations on student data. The front-end of the application is built using Angular, and the back-end server is developed using Node.js and Express. The UI is styled with Bootstrap, HTML, and CSS.
 
-## Code scaffolding
+## Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular**: For building the front-end of the application.
+- **Node.js**: For running the back-end server.
+- **Express**: For handling the back-end API endpoints.
+- **Bootstrap**: For responsive and modern UI design.
+- **HTML & CSS**: For structuring and styling the application.
 
-## Build
+## Project Structure
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular Front-End**: The client-side application built with Angular.
+- **Node.js & Express Back-End**: The server-side application handling API requests, located in a separate repository named `Student_Management_System-Server`.
 
-## Running unit tests
+## Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **CRUD Operations**: Create, Read, Update, and Delete student records.
+- **Responsive Design**: User interface designed with Bootstrap for responsiveness.
+- **RESTful API**: Backend API built with Express for handling student data.
 
-## Running end-to-end tests
+## Getting Started
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Prerequisites
 
-## Further help
+Ensure you have the following installed on your system:
+- Node.js
+- Angular CLI
+- Git
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# Student-Management-System-Using-Angular
+### Installation
+
+1. **Clone the Front-End Repository:**
+
+   ```bash
+   git clone https://github.com/BadgujarHrushikesh/Student_Management_System.git
+   cd Student_Management_System
+   ```
+
+2. **Install Angular Dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Clone the Back-End Repository:**
+
+   ```bash
+   cd ..
+   git clone https://github.com/BadgujarHrushikesh/Student_Management_System-Server.git
+   cd Student_Management_System-Server
+   ```
+
+4. **Install Express Dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+### Running the Application
+
+1. **Start the Back-End Server:**
+
+   Navigate to the back-end repository and start the server:
+
+   ```bash
+   cd Student_Management_System-Server
+   npm start
+   ```
+
+   The Express server should now be running on `http://localhost:5000`.
+
+2. **Start the Front-End Server:**
+
+   Open a new terminal window, navigate to the front-end repository, and start the Angular development server:
+
+   ```bash
+   cd Student_Management_System
+   ng serve
+   ```
+
+   The Angular application should now be running on `http://localhost:4200`.
+
+## Usage
+
+- Navigate to `http://localhost:4200` in your web browser to access the Student Management System.
+- Use the application to perform CRUD operations on student records.
+- The back-end server at `http://localhost:5000` handles all API requests for managing student data.
+
+## Contributing
+
+If you wish to contribute to the project, please fork the repository and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
